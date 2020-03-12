@@ -1,0 +1,14 @@
+version: '2.2'
+
+services:
+    trovadev-react-chat:
+        build: .
+        container_name: trovadev-react-chat
+        restart: unless-stopped
+        volumes:
+            - '.:/app'
+        ports:
+            - "8080:8080"
+        # https://stackoverflow.com/questions/38546755/docker-compose-keep-container-running
+        command: tail -f /dev/null
+
